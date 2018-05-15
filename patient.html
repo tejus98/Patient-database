@@ -1,0 +1,118 @@
+<html>
+
+<head>
+
+	<title>
+		Patient Database
+	</title>
+
+	<style>
+
+		h1{
+			text-align:center;
+			color:grey;
+		}
+		h2{
+			color:red;
+		}
+		html,body{
+			margin-left:0.5vw;
+			background-color:black;
+		    color:black;
+		}
+		input[type="submit"]{
+			background-color:black;
+			border:0.1vw solid white;
+			color:white;
+			border-radius:0.5vw;
+			padding-top:0.3vw;
+			padding-bottom:0.3vw;
+		}
+		input[type="submit"]:hover{
+			color:red;
+			border-color:red;
+			padding-top:0.3vw;
+			padding-bottom:0.3vw;
+		}
+		input[type="text"],input[type="Number"], textarea, select, input[type="date"]{
+			background-color:black;
+			border:0.1vw solid white;
+			color:white;
+			padding-top:0.3vw;
+			padding-bottom:0.3vw;
+
+		}
+		body {
+    background-image: url("http://www.nydailynews.com/resizer/xuRHKHeh-S1yqTPGIylTXI0YuuI=/1400x0/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/GHFY7J5MJ2B7SHUIAKVCIYFABQ.jpg");
+}
+
+
+	</style>
+
+</head>
+
+<body>
+
+	<u><h1>Patient Database</h1></u><br/>
+
+	<h2>Enter the following details</h2>
+	<form action = "Q1.php" method ="POST">
+
+		<label>First Name <input type="text" name="Fname" id ="I1"></label><br/><br/><br/>
+		<label>Last Name <input type="text" name="Lname" id ="I2"></label><br/><br/><br/>
+		<label >Date of Birth <input type="date" name="DOB" id ="I4"></label><br/><br/><br/>
+		<label>Age  <input type="number" name="Age" min="0" id ="I5"></label><br/><br/><br/>
+		<label>Gender
+			<select name="Sex" id ="I6">
+				<option value="Male">Male</option>
+				<option value="Female">Female</option>
+				<option value="Other">Other</option>
+			</select>
+		</label><br/><br/><br/>
+		<label>Phone  <input type="text" name="PNo" id ="I3"></label><br/><br/><br/>
+		<label id = "Fval">Message <br/> <textarea name="Message" rows=4, cols=50, id ="I7"></textarea></label><br/><br/><br/>
+		<input type="submit" name="sub"/><br/><br/>
+
+	</form><br/>
+	<br/>
+
+</body>
+
+	<script type="text/javascript">
+	function Validate()
+	{
+		var X = document.getElementById("I1");
+		if(!X.value)
+		{
+			X.placeholder="Please Enter First Name";
+		}
+
+		var Y = document.getElementById("I2");
+		if(!Y.value)
+		{
+			Y.placeholder="Please Enter Last Name";
+		}
+
+		var Z = document.getElementById("I3");
+		if(!Z.value)
+		{
+			Z.placeholder="Please Enter Phone Number";
+		}
+		else
+		{
+			var M = String(Z.value);
+			if(M.length!=10)
+			{
+					Z.value="";
+					Z.placeholder="Please Enter Valid Phone Number";
+			}
+		}
+
+	}
+	document.getElementById("I1").addEventListener("click", Validate);
+	document.getElementById("I2").addEventListener("click", Validate);
+	document.getElementById("I3").addEventListener("click", Validate);
+	document.getElementById("Fval").addEventListener("click", Validate);
+	</script>
+
+</html>
